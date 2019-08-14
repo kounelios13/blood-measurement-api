@@ -26,19 +26,19 @@ module.exports = {
       user: 'mkcodergr',
       host: process.env.DEPLOY_HOST,
       ref: 'origin/master',
-      repo: 'git@github.com:kounelios13/users-api.git',
-      path: '/home/mkcodergr/apps/users-api',
-      "pre-deploy-local": "cd $HOME/apps/users-api && mkdir -p source",
-      'post-deploy': 'cd $HOME/apps/users-api && echo dir is:$(pwd) && $(npm config get prefix)/bin/pm2 reload $HOME/apps/users-api/ecosystem.config.js --env production --update-env'
+      repo: 'git@github.com:kounelios13/blood-measurement-api.git',
+      path: '/home/mkcodergr/apps/blood-measurement-api',
+      "pre-deploy-local": "cd $HOME/apps/blood-measurement-api && mkdir -p source",
+      'post-deploy': 'cd $HOME/apps/blood-measurement-api && echo dir is:$(pwd) && $(npm config get prefix)/bin/pm2 reload $HOME/apps/blood-measurement-api/ecosystem.config.js --env production --update-env'
     },
     development: {
       user: 'mkcodergr',
       host: process.env.DEPLOY_HOST,
       ref: 'origin/development',
-      repo: 'git@github.com:kounelios13/users-api.git',
-      path: '/home/mkcodergr/apps/users-api',
-      "pre-deploy-local": "cd $HOME/apps/users-api && mkdir -p source",
-      'post-deploy': 'cd $HOME/apps/users-api && echo dir is:$(pwd) && $(npm config get prefix)/bin/pm2 reload $HOME/apps/users-api/ecosystem.config.js  --update-env '
+      repo: 'git@github.com:kounelios13/blood-measurement-api.git',
+      path: '/home/mkcodergr/apps/blood-measurement-api',
+      "pre-deploy-local": "cd $HOME/apps/blood-measurement-api && mkdir -p source",
+      'post-deploy': 'cd $HOME/apps/blood-measurement-api && echo dir is:$(pwd) && $(npm config get prefix)/bin/pm2 reload $HOME/apps/blood-measurement-api/ecosystem.config.js  --update-env '
     }
   }
 };
