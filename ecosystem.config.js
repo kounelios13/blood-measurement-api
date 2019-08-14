@@ -28,7 +28,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@github.com:kounelios13/blood-measurement-api.git',
       path: '/home/mkcodergr/apps/blood-measurement-api',
-      "pre-deploy-local": "cd $HOME/apps/blood-measurement-api && mkdir -p source",
+      // "pre-deploy-local": "cd $HOME/apps/blood-measurement-api && mkdir -p source",
       'post-deploy': 'cd $HOME/apps/blood-measurement-api && echo dir is:$(pwd) && $(npm config get prefix)/bin/pm2 reload $HOME/apps/blood-measurement-api/ecosystem.config.js --env production --update-env'
     },
     development: {
@@ -37,7 +37,7 @@ module.exports = {
       ref: 'origin/development',
       repo: 'git@github.com:kounelios13/blood-measurement-api.git',
       path: '/home/mkcodergr/apps/blood-measurement-api',
-      "pre-deploy-local": "cd $HOME/apps/blood-measurement-api && mkdir -p source",
+      // "pre-deploy-local": "cd $HOME/apps/blood-measurement-api && mkdir -p source",
       'post-deploy': 'cd $HOME/apps/blood-measurement-api && echo dir is:$(pwd) && $(npm config get prefix)/bin/pm2 reload $HOME/apps/blood-measurement-api/ecosystem.config.js  --update-env '
     }
   }
