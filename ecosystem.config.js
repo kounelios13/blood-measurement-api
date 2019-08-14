@@ -33,7 +33,7 @@ module.exports = {
     },
     development: {
       user: 'mkcodergr',
-      host: '192.168.1.10',
+      host: process.env.DEPLOY_HOSTS && process.env.DEPLOY_HOSTS.split(",") || "10.0.0.10",
       ref: 'origin/development',
       repo: 'git@github.com:kounelios13/users-api.git',
       path: '/home/mkcodergr/apps/users-api',
