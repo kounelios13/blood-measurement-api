@@ -46,7 +46,7 @@ module.exports = function (client) {
         }
         // Issue a new token
         const accessToken = jwt.sign(userFound.toObject(), settings.jwtSecret, {
-            expiresIn: '5m'
+            expiresIn: '10m'
         });
         res.json({
             accessToken,

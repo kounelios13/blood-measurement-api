@@ -31,11 +31,11 @@ module.exports = function (client) {
                 versionKey: false,
                 virtuals: false
             }), settings.jwtSecret, {
-                expiresIn: '5m'
+                expiresIn: '10m'
             });
             const refreshToken = randomToken.uid(256);
-            // Each refresh token should be valid for 20 mins
-            const tokenValidity = 20 * 60;
+            // Each refresh token should be valid for 60 mins
+            const tokenValidity = 60 * 60;
             await client.set(refreshToken, user.email, "EX", tokenValidity);
             return res.json({
                 accessToken,
