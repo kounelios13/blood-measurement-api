@@ -44,7 +44,13 @@ const schema = mongoose.Schema({
             type: Date,
             default: null
         }
-    }
+    },
+    records: [{
+        systolic: Number,
+        diastolic: Number,
+        pulses: Number,
+        date: Date
+    }]
 });
 const User = mongoose.model('User', schema);
 
