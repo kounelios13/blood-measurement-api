@@ -24,7 +24,7 @@ module.exports = {
   deploy: {
     production: {
       user: 'mkcodergr',
-      host: process.env.DEPLOY_HOSTS && process.env.DEPLOY_HOSTS.split(",") || "10.0.0.10",
+      host: process.env.DEPLOY_HOST,
       ref: 'origin/master',
       repo: 'git@github.com:kounelios13/users-api.git',
       path: '/home/mkcodergr/apps/users-api',
@@ -33,7 +33,7 @@ module.exports = {
     },
     development: {
       user: 'mkcodergr',
-      host: process.env.DEPLOY_HOSTS && process.env.DEPLOY_HOSTS.split(",") || "10.0.0.10",
+      host: process.env.DEPLOY_HOST,
       ref: 'origin/development',
       repo: 'git@github.com:kounelios13/users-api.git',
       path: '/home/mkcodergr/apps/users-api',
