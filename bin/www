@@ -13,7 +13,9 @@ var http = require('http');
  */
 const ecosystem = require('../ecosystem.config');
 const appConfig = ecosystem.apps[0];
-const isProduction = process.env.NODE_ENV == 'production'
+const isProduction = process.env.NODE_ENV && process.env.NODE_ENV == 'production'
+
+debug("is production:", isProduction);
 var port = normalizePort(process.env.PORT || isProduction ? appConfig.env_production.PORT : appConfig.env.PORT);
 app.set('port', port);
 
