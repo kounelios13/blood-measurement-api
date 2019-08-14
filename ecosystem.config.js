@@ -12,12 +12,12 @@ module.exports = {
     max_memory_restart: '400M',
     env: {
       NODE_ENV: 'development',
-      PORT: 6000
+      PORT: 3001
 
     },
     env_production: {
       NODE_ENV: 'production',
-      PORT: 7000
+      PORT: 3002
     }
   }],
 
