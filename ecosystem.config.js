@@ -1,6 +1,6 @@
 module.exports = {
   apps: [{
-    name: 'API',
+    name: 'BLOOD-API',
     script: './bin/www',
 
 
