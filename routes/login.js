@@ -27,10 +27,14 @@ module.exports = function (client) {
                 err.status = 401;
                 throw err;
             }
-            const accessToken = jwt.sign(user.toObject({
+            const userObject = user.toObject({
                 versionKey: false,
                 virtuals: false
-            }), settings.jwtSecret, {
+            });
+            const jwtPayload = {
+                _id: userObject._id
+            };
+            const accessToken = jwt.sign(jwtPayload, settings.jwtSecret, {
                 expiresIn: '10m'
             });
             const refreshToken = randomToken.uid(256);
