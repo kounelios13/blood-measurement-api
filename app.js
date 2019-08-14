@@ -4,7 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const redis = require('async-redis');
-
+const debug = require('debug')('blood-api');
 const settings = require('./configs/settings');
 const client = redis.createClient({
   host: settings.redisHost || "localhost"
@@ -52,6 +52,7 @@ app.use(function (req, res, next) {
 
 // error handler
 app.use(function (err, req, res, next) {
+  debug(err);
   res.status(err.status || 500).json(err);
 });
 

@@ -127,5 +127,24 @@ module.exports = (client) => {
         }
 
     });
+
+    router.post('/:id/records', validateToken, async (req, res, next) => {
+        const {
+            id
+        } = req.params;
+        const {
+            record
+        } = req.body;
+        try {
+            const user = await User.findById(id).exec();
+            user.records.push(record);
+            await user.save();
+            res.json({
+                'message': 'record added'
+            });
+        } catch (e) {
+            next(e);
+        }
+    });
     return router;
 };
